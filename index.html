@@ -25,24 +25,24 @@
     }
   </script>
 </head>
-<body class="bg-[#111118] text-white font-montserrat flex flex-col items-center justify-center min-h-screen text-center px-4">
+<body class="bg-[#111118] dark:bg-white text-white dark:text-black font-montserrat ...">
 
   <div>
     <h1 class="text-4xl sm:text-6xl font-bold">Willkommen auf meinem Portfolio</h1>
     <p class="text-gray-400 mt-4 text-lg">Diese Seite ist gerade im Aufbau...</p>
   </div>
   <section class="mt-20 max-w-3xl w-full px-6">
-  <div class="bg-[#1A1A2E] p-8 rounded-2xl shadow-lg">
+  <div class="bg-[#1A1A2E] dark:bg-gray-100 p-8 rounded-2xl shadow-lg">
     <div class="flex flex-col items-center">
       <!-- Profilbild -->
       <img src="https://imgur.com/a/wmP0HnW" alt="Profilbild" class="rounded-full mb-4 border-4 border-[#002E5F] shadow-lg">
 
       <!-- Name & Titel -->
       <h2 class="text-3xl font-semibold mb-2">Mike Studer</h2>
-      <p class="text-gray-400 text-center mb-4">Informatik-Enthusiast & Hosting-Anbieter bei CloudCrown</p>
+      <p class="text-gray-400 dark:text-gray-700 text-center mb-4">Informatik-Enthusiast & Hosting-Anbieter bei CloudCrown</p>
 
       <!-- Skills -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 text-sm text-gray-300">
+      <div class="grid ... text-sm text-gray-300 dark:text-gray-800">
         <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Linux Server</span>
         <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Docker</span>
         <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Webhosting</span>
@@ -59,10 +59,10 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- Projekt 1 -->
-    <div class="bg-[#1A1A2E] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+    <div class="bg-[#1A1A2E] dark:bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
       <h3 class="text-xl font-bold mb-2">CloudCrown Hosting</h3>
-      <p class="text-gray-400 text-sm mb-4">Mein eigenes Hosting-Unternehmen mit Fokus auf Schweizer Cloudlösungen.</p>
-      <a href="https://cloudcrown.ch" target="_blank" class="text-[#002E5F] font-semibold hover:underline">Website besuchen</a>
+      <p class="text-gray-400 dark:text-gray-700 text-sm mb-4">Mein eigenes Hosting-Unternehmen mit Fokus auf Schweizer Cloudlösungen.</p>
+      <a href="..." class="text-[#002E5F] dark:text-blue-900 font-semibold hover:underline">Webseite besuchen</a>
     </div>
 
     <!-- Projekt 2 -->
@@ -83,13 +83,13 @@
 
 <section class="mt-20 max-w-2xl w-full px-6 text-center">
   <h2 class="text-3xl font-semibold mb-4">Kontakt</h2>
-  <p class="text-gray-400 mb-6">
+  <p class="text-gray-400 dark:text-gray-700 mb-6">
     Du möchtest mit mir zusammenarbeiten oder hast Fragen?<br />
     Dann schreib mir gerne direkt!
   </p>
 
   <!-- Kontaktbutton -->
-  <a href="mailto:info@cloudcrown.ch" class="inline-block bg-[#002E5F] text-white font-semibold py-3 px-6 rounded-full hover:bg-[#004080] transition-all duration-300">
+  <a href="mailto:..." class="inline-block bg-[#002E5F] dark:bg-blue-200 text-white dark:text-black font-semibold py-3 px-6 rounded-full hover:bg-[#004080] dark:hover:bg-blue-300 transition-all duration-300">
     E-Mail senden
   </a>
 </section>
@@ -100,14 +100,14 @@
 
 </body>
 
-<header class="fixed top-0 left-0 w-full bg-[#1A1A2E] shadow-md z-50">
+<header class="fixed top-0 left-0 w-full bg-[#1A1A2E] dark:bg-gray-100 shadow-md z-50">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <div class="text-xl font-bold text-white">Mike Studer</div>
     <nav class="space-x-4 text-sm sm:text-base">
-      <a href="#hero" class="text-gray-300 hover:text-white transition">Start</a>
-      <a href="#about" class="text-gray-300 hover:text-white transition">Über mich</a>
-      <a href="#projects" class="text-gray-300 hover:text-white transition">Projekte</a>
-      <a href="#contact" class="text-gray-300 hover:text-white transition">Kontakt</a>
+      <a href="#hero" class="text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition">Start</a>
+      <a href="#about" class="text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition">Über mich</a>
+      <a href="#projects" class="text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition">Projekte</a>
+      <a href="#contact" class="text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition">Kontakt</a>
     </nav>
   </div>
     <!-- Dark Mode Toggle -->
