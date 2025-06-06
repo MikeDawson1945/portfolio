@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mike Dawson – Portfolio</title>
-  
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lfi6B4rAAAAAJYhJBmx9z1F-3WZZZOZBs_dYVDT"></script>
+  <title>Mike Studer – Portfolio</title>
+
   <!-- Google Font: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Config mit Montserrat -->
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com">// Zeige Erfolgsmeldung bei erfolgreicher Formularweiterleitung
+  if (window.location.href.includes("#contact")) {
+    const msg = document.getElementById("success-msg");
+    if (msg) msg.classList.remove("hidden");
+  }
+</script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -19,90 +23,112 @@
         extend: {
           fontFamily: {
             montserrat: ['Montserrat', 'sans-serif'],
+          },
+          animation: {
+            'float-slow': 'float 45s ease-in-out infinite',
+            'float-medium': 'float 30s ease-in-out infinite',
+            'float-fast': 'float 22s ease-in-out infinite',
+            'rotate-slow': 'rotate 60s linear infinite',
+            'rotate-fast': 'rotate 20s linear infinite'
+          },
+          keyframes: {
+            float: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '10%': { transform: 'translate(15px, -25px) scale(1.02)' },
+              '20%': { transform: 'translate(-20px, 20px) scale(1.05)' },
+              '30%': { transform: 'translate(25px, 10px) scale(0.95)' },
+              '40%': { transform: 'translate(-10px, -15px) scale(1.01)' },
+              '50%': { transform: 'translate(20px, -10px) scale(1.03)' },
+              '60%': { transform: 'translate(-25px, 15px) scale(0.98)' },
+              '70%': { transform: 'translate(10px, 25px) scale(1.02)' },
+              '80%': { transform: 'translate(-15px, -20px) scale(1)' },
+              '90%': { transform: 'translate(5px, 10px) scale(1.01)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' }
+            },
+            rotate: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' }
+            }
           }
         }
       }
     }
   </script>
+
+  <style>
+    .blob {
+      animation-name: float, rotate;
+      animation-timing-function: ease-in-out, linear;
+      animation-iteration-count: infinite;
+    }
+  </style>
 </head>
-<body class="bg-[#111118] dark:bg-white text-white dark:text-black font-montserrat ...">
+<body class="bg-[#111118] text-white dark:bg-white dark:text-black font-montserrat scroll-smooth">
 
-  <div>
-    <h1 class="text-4xl sm:text-6xl font-bold">Willkommen auf meinem Portfolio</h1>
-    <p class="text-gray-400 mt-4 text-lg">Diese Seite ist gerade im Aufbau...</p>
-  </div>
-  <section class="mt-20 max-w-3xl w-full px-6">
-  <div class="bg-[#1A1A2E] dark:bg-gray-100 p-8 rounded-2xl shadow-lg">
-    <div class="flex flex-col items-center">
-      <!-- Profilbild -->
-      <img src="https://imgur.com/a/wmP0HnW" alt="Profilbild" class="rounded-full mb-4 border-4 border-[#002E5F] shadow-lg">
+<!-- 🌈 Blob Hintergrund -->
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+  <!-- Zusätzliche Blobs 7–10 -->
+  <svg class="absolute top-[65%] left-[10%] w-[300px] h-[300px] blur-2xl opacity-25 blob animate-float-slow rotate-slow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#FF512F" d="M43.6,-44.3C58.5,-32.6,73.4,-16.3,73.2,0.1C73,16.5,57.8,33,42.9,43.9C28.1,54.8,14,60.1,0.2,59.8C-13.7,59.6,-27.3,53.8,-36.3,43C-45.3,32.3,-49.7,16.6,-52.7,-1.2C-55.7,-19,-57.4,-38,-48.2,-49.4C-38.9,-60.7,-19.5,-64.3,-1.2,-62.9C17,-61.6,34.1,-55.9,43.6,-44.3Z" transform="translate(100 100)" />
+  </svg>
+  <svg class="absolute top-[25%] left-[50%] w-[400px] h-[400px] blur-3xl opacity-20 blob animate-float-fast rotate-fast" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#00F260" d="M48.3,-53.1C61.1,-41.6,69.5,-20.8,67.4,-2.6C65.3,15.6,52.6,31.1,39.8,44.5C27,57.9,13.5,69.1,-1.9,71.2C-17.3,73.3,-34.6,66.4,-44.7,53.4C-54.8,40.5,-57.7,21.3,-58.9,1.2C-60.1,-18.9,-59.6,-37.8,-49.2,-49.8C-38.7,-61.8,-19.3,-66.8,1.5,-68.4C22.3,-70.1,44.6,-68.6,48.3,-53.1Z" transform="translate(100 100)" />
+  </svg>
+  <svg class="absolute top-[5%] left-[80%] w-[350px] h-[350px] blur-xl opacity-30 blob animate-float-medium rotate-slow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#C33764" d="M42.4,-49.8C55.4,-38.2,66.1,-25.4,66.3,-11.7C66.4,2,56.1,16.5,44.2,29.2C32.3,41.9,18.6,52.9,2.7,53.8C-13.3,54.6,-26.6,45.2,-35.5,34.1C-44.4,23,-48.8,10.2,-47.4,-2.5C-46,-15.2,-38.9,-27.8,-29.3,-39.8C-19.7,-51.7,-7.8,-63.1,6.8,-67.3C21.4,-71.4,42.8,-68.6,42.4,-49.8Z" transform="translate(100 100)" />
+  </svg>
+  <svg class="absolute top-[85%] left-[50%] w-[500px] h-[500px] blur-3xl opacity-25 blob animate-float-slow rotate-fast" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#7F00FF" d="M48.3,-53.1C61.1,-41.6,69.5,-20.8,67.4,-2.6C65.3,15.6,52.6,31.1,39.8,44.5C27,57.9,13.5,69.1,-1.9,71.2C-17.3,73.3,-34.6,66.4,-44.7,53.4C-54.8,40.5,-57.7,21.3,-58.9,1.2C-60.1,-18.9,-59.6,-37.8,-49.2,-49.8C-38.7,-61.8,-19.3,-66.8,1.5,-68.4C22.3,-70.1,44.6,-68.6,48.3,-53.1Z" transform="translate(100 100)" />
+  </svg>
+  <!-- Mehr Blobs für visuelle Vielfalt -->
+  <svg class="absolute top-[20%] left-[70%] w-[600px] h-[600px] blur-2xl opacity-30 blob animate-float-fast rotate-slow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#8E2DE2" d="M43.6,-44.3C58.5,-32.6,73.4,-16.3,73.2,0.1C73,16.5,57.8,33,42.9,43.9C28.1,54.8,14,60.1,0.2,59.8C-13.7,59.6,-27.3,53.8,-36.3,43C-45.3,32.3,-49.7,16.6,-52.7,-1.2C-55.7,-19,-57.4,-38,-48.2,-49.4C-38.9,-60.7,-19.5,-64.3,-1.2,-62.9C17,-61.6,34.1,-55.9,43.6,-44.3Z" transform="translate(100 100)" />
+  </svg>
 
-      <!-- Name & Titel -->
-      <h2 class="text-3xl font-semibold mb-2">Mike Studer</h2>
-      <p class="text-gray-400 dark:text-gray-700 text-center mb-4">Informatik-Enthusiast & Hosting-Anbieter bei CloudCrown</p>
+  <svg class="absolute top-[75%] left-[20%] w-[450px] h-[450px] blur-xl opacity-25 blob animate-float-medium rotate-fast" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#F7971E" d="M43.6,-44.3C58.5,-32.6,73.4,-16.3,73.2,0.1C73,16.5,57.8,33,42.9,43.9C28.1,54.8,14,60.1,0.2,59.8C-13.7,59.6,-27.3,53.8,-36.3,43C-45.3,32.3,-49.7,16.6,-52.7,-1.2C-55.7,-19,-57.4,-38,-48.2,-49.4C-38.9,-60.7,-19.5,-64.3,-1.2,-62.9C17,-61.6,34.1,-55.9,43.6,-44.3Z" transform="translate(100 100)" />
+  </svg>
 
-      <!-- Skills -->
-      <div class="grid ... text-sm text-gray-300 dark:text-gray-800">
-        <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Linux Server</span>
-        <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Docker</span>
-        <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Webhosting</span>
-        <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">WordPress</span>
-        <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Nextcloud</span>
-        <span class="bg-[#002E5F] bg-opacity-20 px-3 py-1 rounded-full">Mailserver</span>
-      </div>
-    </div>
-  </div>
-</section>
+  <svg class="absolute top-[40%] left-[5%] w-[350px] h-[350px] blur-xl opacity-30 blob animate-float-slow rotate-fast" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#00C9FF" d="M42.4,-49.8C55.4,-38.2,66.1,-25.4,66.3,-11.7C66.4,2,56.1,16.5,44.2,29.2C32.3,41.9,18.6,52.9,2.7,53.8C-13.3,54.6,-26.6,45.2,-35.5,34.1C-44.4,23,-48.8,10.2,-47.4,-2.5C-46,-15.2,-38.9,-27.8,-29.3,-39.8C-19.7,-51.7,-7.8,-63.1,6.8,-67.3C21.4,-71.4,42.8,-68.6,42.4,-49.8Z" transform="translate(100 100)" />
+  </svg>
 
-  <section class="mt-20 max-w-6xl w-full px-6">
-  <h2 class="text-3xl font-semibold text-center mb-8">Projekte</h2>
+  <svg class="absolute top-[10%] left-[15%] w-[700px] h-[700px] blur-3xl opacity-40 blob animate-float-slow rotate-slow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#DC0046" />
+        <stop offset="100%" stop-color="#002E5F" />
+      </linearGradient>
+    </defs>
+    <path fill="url(#grad1)" d="M48.3,-53.1C61.1,-41.6,69.5,-20.8,67.4,-2.6C65.3,15.6,52.6,31.1,39.8,44.5C27,57.9,13.5,69.1,-1.9,71.2C-17.3,73.3,-34.6,66.4,-44.7,53.4C-54.8,40.5,-57.7,21.3,-58.9,1.2C-60.1,-18.9,-59.6,-37.8,-49.2,-49.8C-38.7,-61.8,-19.3,-66.8,1.5,-68.4C22.3,-70.1,44.6,-68.6,48.3,-53.1Z" transform="translate(100 100)" />
+  </svg>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Projekt 1 -->
-    <div class="bg-[#1A1A2E] dark:bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-      <h3 class="text-xl font-bold mb-2">CloudCrown Hosting</h3>
-      <p class="text-gray-400 dark:text-gray-700 text-sm mb-4">Mein eigenes Hosting-Unternehmen mit Fokus auf Schweizer Cloudlösungen.</p>
-      <a href="..." class="text-[#002E5F] dark:text-blue-900 font-semibold hover:underline">Webseite besuchen</a>
-    </div>
+  <svg class="absolute top-[50%] left-[60%] w-[500px] h-[500px] blur-3xl opacity-30 blob animate-float-medium rotate-fast" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#002E5F" d="M48.3,-53.1C61.1,-41.6,69.5,-20.8,67.4,-2.6C65.3,15.6,52.6,31.1,39.8,44.5C27,57.9,13.5,69.1,-1.9,71.2C-17.3,73.3,-34.6,66.4,-44.7,53.4C-54.8,40.5,-57.7,21.3,-58.9,1.2C-60.1,-18.9,-59.6,-37.8,-49.2,-49.8C-38.7,-61.8,-19.3,-66.8,1.5,-68.4C22.3,-70.1,44.6,-68.6,48.3,-53.1Z" transform="translate(100 100)" />
+  </svg>
 
-    <!-- Projekt 2 -->
-    <div class="bg-[#1A1A2E] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-      <h3 class="text-xl font-bold mb-2">Sunshine Valley Network</h3>
-      <p class="text-gray-400 text-sm mb-4">Modded Minecraft-Server mit Community-Features und Discord-Bot-Integration.</p>
-      <a href="https://discord.gg/tXRJfnHDyN" class="text-[#002E5F] font-semibold hover:underline">Mehr erfahren</a>
-    </div>
+  <svg class="absolute top-[30%] left-[80%] w-[300px] h-[300px] blur-2xl opacity-20 blob animate-float-fast rotate-slow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path fill="#DC0046" d="M48.3,-53.1C61.1,-41.6,69.5,-20.8,67.4,-2.6C65.3,15.6,52.6,31.1,39.8,44.5C27,57.9,13.5,69.1,-1.9,71.2C-17.3,73.3,-34.6,66.4,-44.7,53.4C-54.8,40.5,-57.7,21.3,-58.9,1.2C-60.1,-18.9,-59.6,-37.8,-49.2,-49.8C-38.7,-61.8,-19.3,-66.8,1.5,-68.4C22.3,-70.1,44.6,-68.6,48.3,-53.1Z" transform="translate(100 100)" />
+  </svg>
+</div>
 
-    <!-- Projekt 3 -->
-    <div class="bg-[#1A1A2E] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-      <h3 class="text-xl font-bold mb-2">Mailserver mit Mailcow</h3>
-      <p class="text-gray-400 text-sm mb-4">Eigenbetriebener Mailserver für geschäftliche Kommunikation – DSGVO-konform & spamgeschützt.</p>
-      <a href="mailto:info@cloudcrown.ch" class="text-[#002E5F] font-semibold hover:underline">Mehr erfahren</a>
-    </div>
-  </div>
-</section>
+<body class="bg-[#111118] text-white dark:bg-white dark:text-black font-montserrat scroll-smooth">
 
-<section class="mt-20 max-w-2xl w-full px-6 text-center">
-  <h2 class="text-3xl font-semibold mb-4">Kontakt</h2>
-  <p class="text-gray-400 dark:text-gray-700 mb-6">
-    Du möchtest mit mir zusammenarbeiten oder hast Fragen?<br />
-    Dann schreib mir gerne direkt!
-  </p>
+<!-- Hinweis: Die Blobs erhalten unterschiedliche Kombinationen aus z.B. animate-float-slow + rotate-fast etc. -->
+<!-- Beispiel-Anwendung im <svg>-Element: class="absolute ... blob animate-float-medium rotate-slow" -->
+<!-- Diese Klassen musst du manuell auf die einzelnen Blobs anwenden, z.B. <svg class="blob animate-float-fast rotate-slow"> -->
 
-  <!-- Kontaktbutton -->
-  <a href="mailto:..." class="inline-block bg-[#002E5F] dark:bg-blue-200 text-white dark:text-black font-semibold py-3 px-6 rounded-full hover:bg-[#004080] dark:hover:bg-blue-300 transition-all duration-300">
-    E-Mail senden
-  </a>
-</section>
+<!-- 🌙 Dark Mode Toggle -->
+<div class="fixed top-4 right-4 z-50">
+  <button id="theme-toggle" class="bg-[#DC0046] text-white px-3 py-1 rounded-md text-sm shadow hover:bg-[#FF487C] transition">
+    🌙 Dunkler Modus
+  </button>
+</div>
 
-<section id="hero" class="pt-24">
-  <!-- dein bestehender Hero-Content -->
-</section>
-
-</body>
-
-<header class="fixed top-0 left-0 w-full bg-[#1A1A2E] dark:bg-gray-100 shadow-md z-50">
+<!-- 🔝 Navigation -->
+<header class="fixed top-0 left-0 w-full bg-[#1A1A2E] dark:bg-gray-100 shadow z-40">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-bold text-white">Mike Studer</div>
+    <div class="text-xl font-bold">Mike Studer</div>
     <nav class="space-x-4 text-sm sm:text-base">
       <a href="#hero" class="text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition">Start</a>
       <a href="#about" class="text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition">Über mich</a>
@@ -110,30 +136,117 @@
       <a href="#contact" class="text-gray-300 dark:text-gray-800 hover:text-white dark:hover:text-black transition">Kontakt</a>
     </nav>
   </div>
-    <!-- Dark Mode Toggle -->
-  <div class="fixed top-4 right-4 z-50">
-    <button id="theme-toggle" class="bg-[#002E5F] text-white px-3 py-1 rounded-md text-sm shadow hover:bg-[#004080] transition">
-      🌙 Dark Mode
-    </button>
-  </div>
-
-  <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const htmlTag = document.documentElement;
-
-    // Beim Klick: Klasse 'dark' an/aus
-    toggleBtn.addEventListener('click', () => {
-      htmlTag.classList.toggle('dark');
-    
-      // Button-Text aktualisieren
-      if (htmlTag.classList.contains('dark')) {
-        toggleBtn.innerText = '☀️ Light Mode';
-      } else {
-        toggleBtn.innerText = '🌙 Dark Mode';
-      }
-    });
-</script>
-
 </header>
 
+<!-- 🎯 Hero Section -->
+<section id="hero" class="pt-32 pb-20 text-center px-4">
+  <h1 class="text-4xl sm:text-6xl font-bold">Willkommen auf meinem Portfolio</h1>
+  <p class="text-gray-400 dark:text-gray-700 mt-4 text-lg">Hier findest du Infos zu mir und meinen Projekten.</p>
+</section>
+
+<!-- 💎 Über mich -->
+<section id="about" class="pt-20 pb-20 px-4 flex justify-center">
+  <div class="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-black/20 rounded-2xl p-8 max-w-2xl text-left shadow-xl">
+    <h2 class="text-3xl font-bold mb-4 text-center">Über mich</h2>
+    <p class="text-gray-300 dark:text-gray-700 leading-relaxed">
+      Ich bin Mike Studer – ein leidenschaftlicher IT-Enthusiast aus Eschenbach SG.<br>
+      Neben meinem Hauptberuf als Fahrzeugaufbereiter betreibe ich die Hosting-Marke <strong>CloudCrown</strong>.<br>
+      Meine Interessen liegen in Linux-Servern, Webentwicklung und allem rund um Open Source.<br>
+      Ich lerne gerne durch praktische Projekte und baue mir Schritt für Schritt mein Portfolio auf.
+    </p>
+  </div>
+</section>
+
+<!-- 🛠 Projektbereich -->
+<section id="projects" class="pt-20 pb-20 px-4">
+  <h2 class="text-3xl font-bold mb-10 text-center">Projekte</h2>
+  <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    <!-- Projektkarte 1 -->
+    <div class="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-black/20 rounded-xl p-6 shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl">
+      <h3 class="text-xl font-semibold mb-2">CloudCrown Hosting</h3>
+      <p class="text-gray-300 dark:text-gray-700 mb-4 text-sm">Schweizer Hosting-Lösung mit Fokus auf Webhosting, Domains und E-Mail.</p>
+      <a href="https://cloudcrown.ch" target="_blank" class="text-[#DC0046] font-semibold hover:underline">Website besuchen</a>
+    </div>
+
+    <!-- Projektkarte 2 -->
+    <div class="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-black/20 rounded-xl p-6 shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl">
+      <h3 class="text-xl font-semibold mb-2">Sunshine Valley Network</h3>
+      <p class="text-gray-300 dark:text-gray-700 mb-4 text-sm">Minecraft-Server-Community mit Modpacks, Discord-Bot und Events.</p>
+      <a href="https://discord.gg/tXRJfnHDyN" target="_blank" class="text-[#DC0046] font-semibold hover:underline">Discord beitreten</a>
+    </div>
+
+    <!-- Projektkarte 3 -->
+    <div class="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-black/20 rounded-xl p-6 shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl">
+      <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+      <p class="text-gray-300 dark:text-gray-700 mb-4 text-sm">Moderne Portfolio-Seite mit animierten Blobs, dunklem Modus und Tailwind UI.</p>
+      <a href="https://mikedawson.github.io" target="_blank" class="text-[#DC0046] font-semibold hover:underline">Live ansehen</a>
+    </div>
+  </div>
+</section>
+<section id="contact" class="pt-20 pb-20 px-4">
+  <h2 class="text-3xl font-bold mb-10 text-center">Kontakt</h2>
+  <div class="max-w-2xl mx-auto backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-black/20 rounded-2xl p-8 shadow-xl">
+    <form action="https://formsubmit.co/mike.studer1945@gmail.com" method="POST" target="_blank" class="space-y-6">
+      <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_next" value="https://mikedawson.github.io/#contact">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="flex flex-col sm:flex-row gap-4">
+        <input type="text" name="name" placeholder="Max Mustermann" required class="w-full px-4 py-2 rounded bg-white/20 text-white dark:text-black placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#DC0046]">
+        <input type="email" name="email" placeholder="Email Adresse" required class="w-full px-4 py-2 rounded bg-white/20 text-white dark:text-black placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#DC0046]">
+      </div>
+      <textarea name="message" rows="6" placeholder="Deine Nachricht" required class="w-full px-4 py-2 rounded bg-white/20 text-white dark:text-black placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#DC0046]"></textarea>
+      <button type="submit" class="w-full bg-[#DC0046] hover:bg-[#bb0037] text-white py-2 px-4 rounded-md font-semibold transition">Absenden</button>
+      <p id="success-msg" class="mt-4 text-green-400 text-sm text-center hidden">Vielen Dank für deine Nachricht! Ich melde mich bald bei dir.</p>
+      <p class="text-xs text-gray-400 text-center">Dieses Formular ist spamgeschützt durch einen unsichtbaren Filter (Honeypot).</p>
+
+
+
+
+    </form>
+  </div>
+</section>
+
+<!-- 🔚 Footer -->
+<footer class="text-gray-300 dark:text-gray-800 text-center text-base py-10 backdrop-blur-xl bg-white/10 dark:bg-black/10 border-t border-white/20 dark:border-black/20 mt-20">
+  <p class="font-semibold">© Mike Studer | 2025</p>
+  <div class="mt-4 flex justify-center gap-6">
+    <a href="https://github.com/mikedawson" target="_blank" class="hover:underline text-[#DC0046] flex items-center gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577v-2.234c-3.338.726-4.033-1.61-4.033-1.61-.546-1.385-1.333-1.753-1.333-1.753-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.42-1.305.762-1.605-2.665-.3-5.466-1.334-5.466-5.933 0-1.312.468-2.384 1.236-3.222-.123-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.478 11.478 0 0 1 3.003-.403c1.02.005 2.047.137 3.003.403 2.29-1.553 3.295-1.23 3.295-1.23.656 1.653.243 2.873.12 3.176.77.838 1.235 1.91 1.235 3.222 0 4.61-2.804 5.63-5.476 5.924.43.37.823 1.102.823 2.222v3.293c0 .32.192.694.8.576C20.565 21.796 24 17.297 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+    <a href="https://discord.gg/670294463536431109" target="_blank" class="hover:underline text-[#DC0046] flex items-center gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3c-.179.312-.379.728-.518 1.06a18.163 18.163 0 0 0-4.734 0c-.14-.332-.34-.748-.518-1.06a19.79 19.79 0 0 0-3.432 1.369C2.963 9.145 2.183 13.71 2.539 18.222a20.093 20.093 0 0 0 6.132 1.944c.5-.683.944-1.405 1.327-2.161a11.812 11.812 0 0 1-1.861-.868c.157-.118.31-.241.458-.366 3.59 1.694 7.461 1.694 11.01 0 .15.125.303.248.46.366a11.812 11.812 0 0 1-1.862.868c.383.756.826 1.478 1.326 2.16a20.087 20.087 0 0 0 6.134-1.943c.37-4.618-.487-9.19-3.828-13.854zM9.545 15.568c-1.183 0-2.155-1.085-2.155-2.419 0-1.333.956-2.419 2.155-2.419 1.21 0 2.173 1.096 2.155 2.42 0 1.334-.956 2.418-2.155 2.418zm4.91 0c-1.183 0-2.155-1.085-2.155-2.419 0-1.333.956-2.419 2.155-2.419 1.21 0 2.173 1.096 2.155 2.42 0 1.334-.945 2.418-2.155 2.418z"/></svg>Discord</a>
+  </div>
+</footer>
+
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const htmlTag = document.documentElement;
+
+  toggleBtn.addEventListener('click', () => {
+    htmlTag.classList.toggle('dark');
+    toggleBtn.innerText = htmlTag.classList.contains('dark') ? '🌙 Dunkler Modus' : '☀️ Heller Modus';
+  });
+</script>
+
+<script>
+  const form = document.querySelector('form[action^="https://formsubmit.co"]');
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      grecaptcha.ready(function () {
+        grecaptcha.execute("6Lfi6B4rAAAAAJYhJBmx9z1F-3WZZZOZBs_dYVDT", { action: "submit" }).then(function (token) {
+          const input = document.createElement("input");
+          input.setAttribute("type", "hidden");
+          input.setAttribute("name", "g-recaptcha-response");
+          input.setAttribute("value", token);
+          form.appendChild(input);
+          form.submit();
+        });
+      });
+    });
+  }
+</script>
+
+
+</body>
 </html>
